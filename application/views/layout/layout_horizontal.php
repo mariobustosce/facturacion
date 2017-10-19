@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="<?php site_url("login/menu");?>" class="logo">
+    <a href="<?php echo base_url("login/menu");?>" class="logo">
       <img src="<?php echo  site_url(); ?>/assets/img/logo.png" class="img-circle" width="30" height="30">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>Pro</b>G</span>
@@ -60,7 +60,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-user"></i>
-              <span class=""><?php echo $nombre;?></span>
+              <span class=""></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -68,7 +68,7 @@
                 <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  <?php echo $nombre;?> - "Cargo"
+                   - "Cargo"
                   <small>FechaNacimientoOActual</small>
                 </p>
               </li>

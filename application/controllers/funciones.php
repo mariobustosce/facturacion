@@ -51,14 +51,31 @@ class funciones extends CI_Controller {
 			$data["nombre"]=$_SESSION["nombre"];
 			$data["usuario"]=$_SESSION["usuario"];
 			$data["perfil"]=$_SESSION["perfil"];
-			$this->load->model("buscador");
+			$this->load->model("mnomina");
 			$usuario=$_SESSION["usuario"];
-			$clientes=$this->buscador->clientes($usuario);	
-			$data["cliente"]=$clientes;
+			// $data["cliente"]=$clientes;
+			$data['totalesnomina'] = $this->mnomina->totalesnomina();	
 			$this->load->view("contenido");
 			$this->load->view("layout/layout_horizontal",$data);
 			$this->load->view("layout/layout_vertical");
 			$this->load->view("vfunciones/remuneraciones",$data);
+		}else{
+			redirect(site_url("login"));
+		}
+	}
+	function cFacturacion(){
+		if(isset($_SESSION["sesion"])){
+			$data["nombre"]=$_SESSION["nombre"];
+			$data["usuario"]=$_SESSION["usuario"];
+			// $data["perfil"]=$_SESSION["perfil"];
+			// $this->load->model("mnomina");
+			// $usuario=$_SESSION["usuario"];
+			// $data["cliente"]=$clientes;
+			// $data['totalesnomina'] = $this->mnomina->totalesnomina();	
+			$this->load->view("contenido");
+			$this->load->view("layout/layout_horizontal",$data);
+			$this->load->view("layout/layout_vertical");
+			$this->load->view("vfunciones/facturacion",$data);
 		}else{
 			redirect(site_url("login"));
 		}
@@ -68,10 +85,13 @@ class funciones extends CI_Controller {
 			$data["nombre"]=$_SESSION["nombre"];
 			$data["usuario"]=$_SESSION["usuario"];
 			$data["perfil"]=$_SESSION["perfil"];
-			$this->load->model("buscador");
+			// $this->load->model("buscador");
+			$this->load->model("mnomina");
 			$usuario=$_SESSION["usuario"];
-			$clientes=$this->buscador->clientes($usuario);	
-			$data["cliente"]=$clientes;
+			// $clientes=$this->buscador->clientes($usuario);
+			$data['totales'] = $this->mnomina->totalesnomina();
+			$data['clientes'] = $this->mnomina->nominaingresada();
+			// $data["cliente"]=$clientes;
 			$this->load->view("contenido");
 			$this->load->view("layout/layout_horizontal",$data);
 			$this->load->view("layout/layout_vertical");

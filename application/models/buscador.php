@@ -23,7 +23,7 @@ class buscador extends CI_model {
     }
 
     function buscarclientes($cliente){
-        $query="SELECT id_cliente, cliente FROM SGI_Clientes WHERE activo=1 AND id_cliente=".$cliente." ORDER BY cliente asc";
+        $query="SELECT id_cliente, cliente FROM SGI_Clientes WHERE activo=1  ORDER BY cliente asc";
         $resultado=$this->db->query($query);
         return $resultado->row_array();
     }

@@ -1,10 +1,10 @@
-<body class="hold-transition skin-green  sidebar-mini sidebar-collapse" >
+<body class="hold-transition skin-green  sidebar-mini " >
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header" style="text-align: center; color: white;">MENÚ</li>
+        <li class="header" style="text-align: center; color: white;"><a href="<?php echo base_url("login/menu");?>">MENÚ</a></li>
       <!--    <li class="header">Cliente</li>
          <li><a href="#"><span>Selecione Cliente</span></a></li>
         <li><a href="#"><form id="form1" name="form1" method="post" action="<?php echo  site_url();?>/buscarCliente">
@@ -19,25 +19,38 @@
         <li class="treeview">
           <a href="controlador/vista">
             <i class="fa fa-file-text-o"></i>
+            <span>Facturacion</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+          <li><a href="<?php echo base_url("funciones/cFacturacion");?>"><i class="fa fa-circle-o"></i>Detalle Facturación</a></li>
+        </ul>
+        </li>
+        <!-- <li class="treeview">
+          <a href="controlador/vista">
+            <i class="fa fa-file-text-o"></i>
             <span>Remuneraciones</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
            <ul class="treeview-menu">
-          <li><a href="<?php echo base_url("funciones/cremuneraciones");?>"><i class="fa fa-circle-o"></i>Detalle Remun</a></li>
+          <li><a href="<?php echo base_url("funciones/cremuneraciones");?>"><i class="fa fa-circle-o"></i>Nominas ingresadas</a></li>
         </ul>
-        </li>
+        </li> -->
         <li class="treeview">
           <a href="#">
             <i class="fa fa-users"></i>
-            <span>Nomina</span>
+            <span>Remuneraciones</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
            <ul class="treeview-menu">
-          <li><a href="<?php echo base_url("funciones/cnomina");?>"><i class="fa fa-circle-o"></i>Detalle de Nomina</a></li>
+          <li><a href="<?php echo base_url("funciones/cremuneraciones");?>"><i class="fa fa-circle-o"></i>Remuneraciones</a></li>
+           <li><a href="<?php echo base_url("funciones/cnomina");?>"><i class="fa fa-circle-o"></i>Detalle de Nomina</a></li>
         </ul>
         </li>
         <li class="treeview">
@@ -99,7 +112,7 @@
             </span>
           </a>
            <ul class="treeview-menu">
-          <li><a href="<?php echo base_url("funciones/cchileexpress");?>"><i class="fa fa-circle-o"></i>Detalle de ChileExpress</a></li>
+          <li><a href="<?php echo base_url("funciones/cchileexpress");?>"><i class="fa fa-circle-o"></i>Detalle ChileExpress</a></li>
         </ul>
         </li>
         <li class="treeview">
@@ -116,7 +129,7 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="glyphicon glyphicon-briefcase"></i>
+            <i class="fa fa-suitcase"></i>
             <span>Proyectos</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>

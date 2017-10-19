@@ -13,6 +13,7 @@ class login extends CI_Controller {
 		$usuario=$_POST['user'];
 		$contra=$_POST['pass'];
 		$this->load->model("buscador");
+		// $this->load->model("mfunciones");
 		$persona = $this->buscador->validarUsuario($usuario,$contra);
 		if($persona!=null){
 			$nombre=$persona['nombre'];
@@ -36,6 +37,8 @@ class login extends CI_Controller {
 			$data["usuario"]=$_SESSION["usuario"];
 			$data["perfil"]=$_SESSION["perfil"];
 			$this->load->model("buscador");
+			$this->load->model("mnomina");
+			$data['Clientes'] = $this->mnomina->Clientes();
 			$usuario=$_SESSION["usuario"];
 			$clientes=$this->buscador->clientes($usuario);	
 			$data["cliente"]=$clientes;

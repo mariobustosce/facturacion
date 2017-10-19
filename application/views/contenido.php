@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="http://www.cscc.edu/_resources/app-data/datatables/media/css/jquery.dataTables.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
   <link rel="stylesheet" href="<?php echo base_url("assets/css/jquery.dataTables.min.css");?>">
+
   <!-- Theme style -->
   <link rel="stylesheet" href="/facturacion/assets/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -43,6 +44,23 @@
 <script src="<?php echo base_url("assets/js/dataTables.fixedColumns.min.js");?>"></script>
 <!-- SlimScroll -->
 <script src="/facturacion/assets/js/jquery.slimscroll.min.js"></script>
+<script src="../../plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- FLOT CHARTS -->
+<script src="/facturacion/assets/flot/jquery.flot.min.js"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="/facturacion/assets/flot/jquery.flot.resize.min.js"></script>
+<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+<script src="/facturacion/assets/flot/jquery.flot.pie.min.js"></script>
+<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+<script src="/facturacion/assets/flot/jquery.flot.categories.min.js"></script>
 <!-- FastClick -->
 <script src="/facturacion/assets/js/fastclick.js"></script>
 <!-- AdminLTE App -->

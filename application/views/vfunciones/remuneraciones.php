@@ -3,19 +3,13 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-    <table>
-      <td><h2>Sistema de Facturación<small>1.0&nbsp;&nbsp;&nbsp;</small> </h2></td>
-        <td><table>
-        <td><h1><small>Nombre cliente:</small></td>
-        <td></td> <td></td> <td></td> <td></td> <td></td>
-        <td><br><form id="form1" name="form1" method="post" action="<?php echo  site_url();?>/buscarCliente">
-        <select id="clientes" name="clientes" style="width:200px" class="form-control" onchange="document.getElementById('form1').submit();">
-            <option value="">Seleccione</option>
-            <?php
-                foreach ($clientes as $cl) {
-                    echo "<option value='".$cl["id_cliente"]."'>".strtoupper($cl["cliente"])."</option>";}?>
-        </select></form></td>
-        </table></td></table> 
+    
+      <h2>Sistema de Facturación<small>1.0&nbsp;&nbsp;&nbsp;</small> </h2>
+      <ol class="breadcrumb">
+        <li><a href="<?php echo base_url("login/menu");?>"><i class="fa fa-dashboard"></i> Menu</a></li>
+        <li class="active"><a href="#">Remuneraciones</li>
+      </ol>
+      
     </section>
     <!-- Main content -->
     <section class="content">
@@ -23,48 +17,51 @@
      <div class="row">
         <div class="col-md-3">
           <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="fa fa-user-times"></i></span>
+            <span class="info-box-icon bg-aqua"><i class="fa  fa-usd"></i></span>
+<?php 
 
-            <div class="info-box-content">
-              <span class="info-box-text">N° de Finiquitados</span>
-              <span class="info-box-number">41090<small></small></span>
+  foreach ($totalesnomina as $t)  {
+    echo" 
+            <div class='info-box-content'>
+              <span class='info-box-text'>Total Costo Cliente</span>
+              <span class='info-box-number'>$".number_format($t["TotalCostoFinalCliente"])."<small></small></span>
             </div>
             <!-- /.info-box-content -->
           </div>
           <!-- /.info-box -->
         </div>
         <!-- /.col -->
-        <div class="col-md-3">
-          <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="fa fa-users"></i></span>
+        <div class='col-md-3'>
+          <div class='info-box'>
+            <span class='info-box-icon bg-green'><i class='fa fa-users'></i></span>
 
-            <div class="info-box-content">
-              <span class="info-box-text">N° Contratos</span>
-              <span class="info-box-number">4410</span>
+            <div class='info-box-content'>
+              <span class='info-box-text'>N° Contratos</span>
+              <span class='info-box-number'>".$t["ncontratos"]."</span>
             </div>
             <!-- /.info-box-content -->
           </div>
           <!-- /.info-box -->
         </div>
-        <div class="col-md-3">
-          <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="fa fa-black-tie"></i></span>
+        <div class='col-md-3'>
+          <div class='info-box'>
+            <span class='info-box-icon bg-yellow'><i class='fa fa-black-tie'></i></span>
 
-            <div class="info-box-content">
-              <span class="info-box-text">N° Contratos Fijos</span>
-              <span class="info-box-number">4110</span>
+            <div class='info-box-content'>
+              <span class='info-box-text'>N° Contratos Fijos</span>
+              <span class='info-box-number'>5</span>
             </div>
             <!-- /.info-box-content -->
           </div>
           <!-- /.info-box -->
         </div>
-        <div class="col-md-3">
-          <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-industry"></i></span>
+        <div class='col-md-3'>
+          <div class='info-box'>
+            <span class='info-box-icon bg-red'><i class='fa fa-industry'></i></span>
 
-            <div class="info-box-content">
-              <span class="info-box-text">N° Contratos Indefinido</span>
-              <span class="info-box-number">510</span>
+            <div class='info-box-content'>
+              <span class='info-box-text'>N° Contratos Indefinido</span>
+              <span class='info-box-number'>25</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -72,12 +69,14 @@
         </div>
         <!-- /.col -->
       </div>
-
+ ";}?>
       <div class="row">
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
+
               <h3 class="box-title">Gastos</h3>
+              <h3>Cliente:&nbsp;&nbsp;<small><?php echo $totalesnomina[0]["nombrecliente"]; ?></small></h3>
 
               <!-- <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -109,18 +108,21 @@
                     <table id="tabla" class="display nowrap" cellspacing="0" width="100%">
                       <thead>
                               <tr>
-                                <th>ID_Nomina</th>
-                                <th>FechaRegistro</th>
-                                <th>EstadoNomina</th>
+                                <th>Cliente</th>
+                                <th>Estado</th>
+                                <th>Fecha Ingreso</th>
                               </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>asdasd</td>
-                          <td>asdasd</td>
-                          <td>sdaew</td>
-
-                        </tr>
+                        <?php 
+                        foreach($totalesnomina as $c) {
+echo "     
+            <tr>  
+              <td>".$c['nombrecliente']."</td>
+              <td>".$c['EstadoNomina']."</td> 
+              <td>".$c['FechaRegistro']."</td>
+            </tr>";
+        } ?>
                       </tbody>
                     </table>
                   </div>
